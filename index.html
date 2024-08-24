@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canteen Food Takeaway</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav>
         <h1>QuickBite Campus</h1>
-        <input type="text" id="searchBar" placeholder="Search for food...">
+        <div class="combo">
+            <input type="text" id="searchBar" placeholder="Search for your foavourite-bite...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        
         <select id="filter">
             <option value="all">All</option>
             <option value="fastfood">Fast Food</option>
@@ -22,10 +27,14 @@
             <option value="lowtohigh">Price: Low to High</option>
         </select>
     </nav>
-
-    <div class="menu-items" id="menuItems">
-       
+  
+    <div class="background-image" id="backgroundImage " onclick="bgImages()">
+        <div class="menu-items" id="menuItems">
+           
+        </div>
     </div>
+    
+    
 
     <script src="script.js"></script>
 </body>
