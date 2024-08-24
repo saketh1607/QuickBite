@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    
 }
 
 nav {
@@ -9,37 +10,73 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #65adb9;
+    background-color: rgb(216, 188, 134);
+    
 }
 
+
 nav h1 {
-    color: #fff;
+    color: #000000;
+    font-weight: 900;
 }
-nav input{
-    width: 25%;
+nav h1:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+nav .combo{
+    display: flex;
+    width: 50%;
+}
+nav .combo input{
+    width: 90%;
+    
+}
+nav .combo i{
+    padding: 5px;
+    background-color: rgb(46, 46, 137);
 }
 nav input, nav select {
     padding: 5px;
     margin-left: 10px;
+    border: 1.2px solid black;
+}
+.combo i:hover{
+    border:4px solid rgb(91, 91, 127)
+}
+.combo input:hover{
+    border:4px solid rgb(91, 91, 127)
+}
+nav select:hover{
+    border:4px solid rgb(91, 91, 127)
 }
 
 .menu-items {
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
+   
 }
 
 .menu-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
     background-color: #f9f9f9;
     transition: transform 0.3s;
+}
+.menu-items.show{
+    display: block;
 }
 
 .menu-item:hover {
     transform: scale(1.05);
+    box-shadow: rgb(252, 4, 4);
 }
 
 .menu-item img {
@@ -58,8 +95,26 @@ nav input, nav select {
 }
 
 .menu-item button:hover {
-    background-color: #45a049;
+    background-color: #19e023;
 }
+.menu-item img{
+    height: 150px;
+    width: 150px;
+}
+.background-image {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/013/516/841/non_2x/italian-food-restaurant-or-cafeteria-with-people-eating-traditional-italy-dishes-pizza-or-pasta-in-hand-drawn-cartoon-template-illustration-vector.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
 
 @media (max-width: 600px) {
     .menu-items {
@@ -70,8 +125,45 @@ nav input, nav select {
         flex-direction: column;
     }
 
-    nav input, nav select {
+    nav .combo, nav select, {
         width: 100%;
         margin-top: 10px;
+    }
+    nav .combo input{
+        width: 85%;
+    }
+    nav .combo i{
+        width: 15%;
+    }
+   
+}
+@media (max-width: 575.98px) {
+    .background-image {
+        background-position: top center; /
+        height: 75vh; 
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .background-image {
+        background-position: center center; 
+        height: 80vh; 
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .background-image {
+        background-position: center center; 
+        height: 85vh; 
+    }
+}
+
+
+@media (min-width: 992px) {
+    .background-image {
+        background-position: center center; 
+        height: 100vh; 
     }
 }
