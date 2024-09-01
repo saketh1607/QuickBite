@@ -3,40 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canteen Food Takeaway</title>
+    <title>QuickBite Campus</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav>
-        <h1>QuickBite Campus</h1>
-        <div class="combo">
-            <input type="text" id="searchBar" placeholder="Search for your foavourite-bite...">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#"><i class="fas fa-utensils"></i> QuickBite Campus</a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBar" placeholder="Search for delicious food...">
+            </div>
+            <div class="nav-items">
+                <select id="filter">
+                    <option value="all">All</option>
+                    <option value="fastfood">Fast Food</option>
+                    <option value="annapurna">Annapurna Mess</option>
+                    <option value="juices">Juices</option>
+                    <option value="maggies">Maggies</option>
+                    <option value="frankies">Frankies</option>
+                    <option value="fries">Fries</option>
+                    <option value="lowtohigh">Price: Low to High</option>
+                </select>
+                <div class="cart">
+                    <p class="inner" onclick="showcart()">
+                        0
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                    </p>
+                </div>
+                
+                <div class="profile">
+                    <a href="profile/index2.html"><i class="fas fa-user-circle"></i></a>
+                </div>
+            </div>
         </div>
-        
-        <select id="filter">
-            <option value="all">All</option>
-            <option value="fastfood">Fast Food</option>
-            <option value="annapurna">Annapurna Mess</option>
-            <option value="juices">Juices</option>
-            <option value="maggies">maggies</option>
-            <option value="frankies">frankies</option>
-            <option value="fries">Fries</option>
-
-            <option value="lowtohigh">Price: Low to High</option>
-        </select>
-       
-        <a href="https://profile-fawn-eight.vercel.app/" class="href"> <i class="fa-regular fa-user fa-xl" onclick="profile()"></i></a>
     </nav>
-  
-    <div class="background-image" id="backgroundImage " onclick="bgImages()">
-        <div class="menu-items" id="menuItems">
-           
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Delicious Food Delivered To You</h1>
+            <p>Explore our menu and order your favorite meals anytime, anywhere.</p>
+            <button onclick="scrollToMenu()">Explore Menu <i class="fas fa-arrow-down"></i></button>
+        </div>
+    </section>
+
+    <section class="menu" id="menuSection">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-items" id="menuItems">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>QuickBite Campus</h3>
+                <p>Your go-to platform for quick and delicious meals on campus.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#menuSection">Menu</a></li>
+                    <li><a href="profile/index2.html">Profile</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 QuickBite Campus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="upiModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3>Scan to Pay</h3>
+            <img src="https://globalprimenews.com/wp-content/uploads/2022/08/IMG-20220805-WA0029.jpg" alt="UPI Scanner">
+            <p>Please scan the QR code to complete your payment.</p>
         </div>
     </div>
-    
-    
 
     <script src="script.js"></script>
 </body>
