@@ -24,6 +24,13 @@
     function scrollToMenu() {
         document.getElementById('menuSection').scrollIntoView({ behavior: 'smooth' });
     }
+    function scrolltochefs() {
+        document.getElementById('chef').scrollIntoView({ behavior: 'smooth' });
+    }
+    function canteen(){
+        document.getElementById('cann').scrollIntoView({ behavior: 'smooth' });
+    }
+    
     
     function repeater(items) {
         const menuItemsContainer = document.getElementById('menuItems');
