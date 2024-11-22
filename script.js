@@ -15,6 +15,27 @@
         { id: 15, name: 'Masala Dosa', price: 45, img: 'https://media.istockphoto.com/photos/south-indian-breakfast-dosa-in-golden-brown-color-picture-id177266405?k=6&m=177266405&s=612x612&w=0&h=xjxOoDLbocEYTxSh_FIlnQR4bDQ89egLhaJN0UWkr6s=', category: 'annapurna' },
         { id: 16, name: 'Onion Dosa', price: 45, img: 'https://img.freepik.com/free-photo/delicious-indian-dosa-composition_23-2149086051.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724025600&semt=ais_hybrid', category: 'annapurna' }
     ];
+function rateItem(itemId) {
+    selectedItem = menuItems.find(item => item.id === itemId);
+    if (selectedItem) {
+        document.getElementById('ratingModal').style.display = 'flex';
+    }
+}
+
+function closeRatingModal() {
+    document.getElementById('ratingModal').style.display = 'none';
+}
+
+function submitFeedback() {
+    const rating = document.getElementById('ratingStars').value;
+    const feedback = document.getElementById('feedback').value;
+
+    if (selectedItem) {
+        alert(`Thank you for rating ${selectedItem.name}!\nRating: ${rating}\nFeedback: ${feedback}`);
+        selectedItem = null;
+        closeRatingModal();
+    }
+}
     let cartItems = [];
 
     document.addEventListener('DOMContentLoaded', () => {
