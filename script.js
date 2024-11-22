@@ -69,7 +69,7 @@ function submitFeedback() {
         <button class="order-btn" onclick="orderItem(${item.id})">Order Now</button>
         <button class="cart-btn" onclick="addToCart(${item.id})">Add to Cart</button>
     </div>
-     <button class="rate-btn" onclick="openRatingModal(${item.id})">Rate</button>
+     // <button class="rate-btn" onclick="openRatingModal(${item.id})">Rate</button>
 
             `;
          
