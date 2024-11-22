@@ -7,7 +7,7 @@
         { id: 7, name: 'Manchurya Noodles', price: 70, img: 'https://i.ytimg.com/vi/MhiWI1bmbh0/maxresdefault.jpg', category: 'fastfood' },
         { id: 8, name: 'Dry Maggi', price: 50, img: 'https://i.ytimg.com/vi/gFJpjvDT3s4/maxresdefault.jpg', category: 'maggies' },
         { id: 9, name: 'Soupy Maggi', price: 55, img: 'https://tse1.mm.bing.net/th?id=OIP.Sw6agpuS6dU4nhQD6wjVcQHaEK&pid=Api&P=0&h=180', category: 'maggies' },
-        { id: 10, name: 'Peri-Peri Fries', price: 50, img: 'https://www.themonktravel.com/wp-content/uploads/2023/04/peri-f.jpg', category: 'fries' },
+        { id: 10, name: 'Peri-Peri Fries', price: 50, img: 'https://tse3.mm.bing.net/th?id=OIP.7I78DZ3TcPF2E0BPUREqCgHaH4&pid=Api&P=0&h=180', category: 'fries' },
         { id: 11, name: 'Paneer Frankie', price: 60, img: 'https://tse3.mm.bing.net/th?id=OIP.VzrRoF2FmfsofGYWahJQQAHaEK&pid=Api&P=0&h=180', category: 'frankies' },
         { id: 12, name: 'Manchury Frankie', price: 60, img: 'https://i.ytimg.com/vi/V1cGyZUu8lM/hqdefault.jpg', category: 'frankies' },
         { id: 13, name: 'Paneer Schezwan', price: 65, img: 'https://i.ytimg.com/vi/9UlRvBhI398/maxresdefault.jpg', category: 'frankies' },
