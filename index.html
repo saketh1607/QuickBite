@@ -44,6 +44,23 @@
                         <i class="fa-solid fa-cart-shopping fa-xl"></i>
                     </p>
                 </div>
+                <div id="ratingModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeRatingModal()">&times;</span>
+                <h2>Rate and Give Feedback</h2>
+                <div id="rating">
+                    <label for="ratingStars">Rating (1-5):</label>
+                    <select id="ratingStars">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <textarea id="feedback" placeholder="Write your feedback here..."></textarea>
+                <button onclick="submitFeedback()">Submit Feedback</button>
+            </div>
                 
                 <div class="profile">
                     <a href="https://profile-fawn-eight.vercel.app/"><i class="fas fa-user-circle"></i></a>
