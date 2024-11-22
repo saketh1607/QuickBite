@@ -62,14 +62,17 @@ function submitFeedback() {
             menuItem.classList.add('menu-item');
             
             menuItem.innerHTML = `
-                <img src="${item.img}" alt="${item.name}">
-                <h3>${item.name}</h3>
-                <p>₹${item.price}</p>
-                <div class="buttons">
-                    <button class="order-btn" onclick="orderItem(${item.id})">Order Now</button>
-                    <button class="cart-btn" onclick="addToCart(${item.id})">Add to Cart</button>
-                </div>
+               <img src="${item.img}" alt="${item.name}">
+    <h3>${item.name}</h3>
+    <p>₹${item.price}</p>
+    <div class="buttons">
+        <button class="order-btn" onclick="orderItem(${item.id})">Order Now</button>
+        <button class="cart-btn" onclick="addToCart(${item.id})">Add to Cart</button>
+        <button class="rate-btn" onclick="openRatingModal(${item.id})">Rate</button>
+    </div>
+
             `;
+         
     
             menuItemsContainer.appendChild(menuItem);
         });
