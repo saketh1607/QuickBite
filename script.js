@@ -48,11 +48,71 @@ function sendQuery() {
 
 function getResponse(query) {
     query = query.toLowerCase();
-    if (query.includes('menu')) return 'You can browse the menu by scrolling up.';
-    if (query.includes('order')) return 'Click "Order Now" to place an order.';
-    if (query.includes('payment')) return 'We accept payments through UPI.';
-    return 'Sorry, I didn’t understand that. Can you ask differently?';
+    
+    const responses = {
+        'menu': 'You can browse the menu by scrolling up or search for your favorite dish in the search bar.',
+        'order': 'Click "Order Now" to place an order for your selected item.',
+        'payment': 'We accept payments through UPI. After selecting your items, proceed to checkout.',
+        'cart': 'Your cart contains the items you have selected. You can add or remove items from here.',
+        'empty cart': 'Your cart is empty. Please add some items to your cart before placing an order.',
+        'fries': 'We serve delicious fries, including Peri-Peri Fries. Find them under the "Fries" category.',
+        'dosa': 'We have Plain Dosa, Masala Dosa, and Onion Dosa under the "Annapurna" category.',
+        'noodles': 'Manchurian Noodles and Dry Maggi are available in the "Fastfood" and "Maggies" categories.',
+        'juice': 'We offer fresh juices such as Mango Juice under the "Juices" category.',
+        'order status': 'You can track your order after it is placed. Once dispatched, you will receive a notification.',
+        'how to order': 'To place an order, select items from the menu, click "Order Now" and proceed to checkout.',
+        'delivery time': 'Delivery times depend on your location, but we strive to deliver as fast as possible.',
+        'location': 'Our service is available within the campus. Please enter your address during checkout.',
+        'contact us': 'You can contact us via email at support@canteen.com or call 123-456-7890.',
+        'special offers': 'Check our website regularly for exciting offers and discounts on your favorite meals.',
+        'spicy food': 'If you prefer spicy dishes, try our Manchurian or Peri-Peri Fries.',
+        'vegetarian options': 'We have a wide variety of vegetarian dishes including Paneer Frankie, Veg Fried Rice, and Dosa.',
+        'non-veg options': 'We currently do not offer non-vegetarian options on our menu.',
+        'popular dishes': 'Our most popular dishes include Veg Fried Rice, Manchurian, and Paneer Frankie.',
+        'allergic food': 'If you have food allergies, please contact us for more details on ingredient information.',
+        'feedback': 'We value your feedback! Please share your experience with us to help improve our services.',
+        'rating': 'You can rate your experience after placing an order. Your feedback helps us serve you better.',
+        'food delivery': 'Food delivery is available for orders placed through the website or app.',
+        'cancel order': 'To cancel an order, please contact customer support as soon as possible.',
+        'menu categories': 'Our menu is divided into categories such as Fastfood, Juices, Annapurna, Fries, and more.',
+        'order help': 'For help with placing an order, feel free to reach out to our customer support.',
+        'opening hours': 'We are open from 8 AM to 10 PM every day.',
+        'discounts': 'Discounts are available for first-time customers and bulk orders.',
+        'payment failure': 'If you face a payment failure, please try again or contact customer support.',
+        'how to use the search bar': 'Use the search bar to find specific dishes or categories from the menu.',
+        'cancellation policy': 'Orders can be canceled within 15 minutes of placing them.',
+        'track order': 'You can track your order by logging into your account and going to the "My Orders" section.',
+        'order confirmation': 'You will receive an order confirmation with your unique ID once your payment is successful.',
+        'privacy policy': 'Your personal details are kept safe and secure as per our privacy policy.',
+        'terms and conditions': 'Please read our terms and conditions before using our services.',
+        'user account': 'You can create a user account to save your order history and preferences.',
+        'forgot password': 'Click on "Forgot Password" at the login page to reset your password.',
+        'new user': 'Welcome! Create an account to enjoy a seamless food ordering experience.',
+        'repeat order': 'You can repeat previous orders from your order history section.',
+        'delivery status': 'Check the delivery status in your account after placing the order.',
+        'minimum order': 'The minimum order value is ₹100. Please add more items if the total is less.',
+        'order amount': 'The total order amount will be shown during the checkout process.',
+        'discount code': 'Apply discount codes at checkout to avail special offers and discounts.',
+        'order review': 'After your order is delivered, you can leave a review based on your experience.',
+        'help with cart': 'To add or remove items, visit your cart and make the necessary changes.',
+        'change address': 'You can change your delivery address at checkout before confirming the order.',
+        'add to cart': 'Click "Add to Cart" to add items to your cart and proceed to checkout.',
+        'select payment method': 'Choose UPI as your payment method at the checkout page.',
+        'apply coupon': 'Apply your coupon code during checkout to get discounts on your order.',
+        'how to place order': 'Select your items, add them to the cart, and click "Place Order" to complete the checkout process.',
+        'order not received': 'If you haven’t received your order yet, please contact customer support.',
+        'restaurant location': 'We are located on the campus premises for easy access.',
+        'can i change my order': 'Once an order is placed, it cannot be changed, but you can contact customer support to help.',
+        'how long does it take to cook': 'Cooking times vary depending on the dish. On average, it takes 15-20 minutes.',
+        'fastest dish': 'Our fast food items, such as Manchurian Noodles, are the quickest to prepare.',
+        'sides available': 'We offer sides like fries, juices, and different varieties of bread.',
+        'full menu': 'You can view the full menu by clicking on the "Menu" tab at the top.',
+        'can i order for someone else': 'Yes, you can order food for someone else by entering their delivery address during checkout.'
+    };
+    
+    return responses[query] || 'Sorry, I didn’t understand that. Can you ask differently?';
 }
+
 
 function rateItem(itemId) {
     selectedItem = menuItems.find(item => item.id === itemId);
