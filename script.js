@@ -15,6 +15,45 @@
         { id: 15, name: 'Masala Dosa', price: 45, img: 'https://media.istockphoto.com/photos/south-indian-breakfast-dosa-in-golden-brown-color-picture-id177266405?k=6&m=177266405&s=612x612&w=0&h=xjxOoDLbocEYTxSh_FIlnQR4bDQ89egLhaJN0UWkr6s=', category: 'annapurna' },
         { id: 16, name: 'Onion Dosa', price: 45, img: 'https://img.freepik.com/free-photo/delicious-indian-dosa-composition_23-2149086051.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724025600&semt=ais_hybrid', category: 'annapurna' }
     ];
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbot');
+    const toggleButton = document.getElementById('chatbot-toggle');
+    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+        chatbot.style.display = 'flex';
+        toggleButton.style.display = 'none';
+    } else {
+        chatbot.style.display = 'none';
+        toggleButton.style.display = 'block';
+    }
+}
+
+function sendQuery() {
+    const query = document.getElementById('chatbot-query').value.trim();
+    const messages = document.getElementById('chatbot-messages');
+    if (query) {
+        const userMessage = document.createElement('div');
+        userMessage.textContent = `You: ${query}`;
+        userMessage.style.textAlign = 'right';
+        messages.appendChild(userMessage);
+        document.getElementById('chatbot-query').value = '';
+
+        setTimeout(() => {
+            const botMessage = document.createElement('div');
+            botMessage.textContent = `Bot: ${getResponse(query)}`;
+            messages.appendChild(botMessage);
+            messages.scrollTop = messages.scrollHeight;
+        }, 500);
+    }
+}
+
+function getResponse(query) {
+    query = query.toLowerCase();
+    if (query.includes('menu')) return 'You can browse the menu by scrolling up.';
+    if (query.includes('order')) return 'Click "Order Now" to place an order.';
+    if (query.includes('payment')) return 'We accept payments through UPI.';
+    return 'Sorry, I didn’t understand that. Can you ask differently?';
+}
+
 function rateItem(itemId) {
     selectedItem = menuItems.find(item => item.id === itemId);
     if (selectedItem) {
