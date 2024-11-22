@@ -4,6 +4,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+.nutrition-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.nutrition-btn:hover {
+    background-color: #45a049;
+}
+
 .close-btn {
     float: right;
     cursor: pointer;
